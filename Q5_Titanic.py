@@ -13,3 +13,17 @@ print(data_summary)
 # c. Give an overview of all missing values in the data.
 missing_values = titanic.isnull().sum()
 print(missing_values)
+
+# d. Drop rows with missing age values
+titanic_age_present = titanic.dropna(subset=['age']).copy()
+
+# Group the passengers into 10-year age ranges
+age_ranges = list(range(0, 81, 10))
+age_labels = [f"{start} - {end-1}" for start, end in zip(age_ranges[:-1], age_ranges[1:])]
+age_labels.append("80+")
+
+# Adjust the bins to include the rightmost edge for the last category
+age_ranges.append(81)
+
+# Use .loc to avoid SettingWithCopyWarning
+titanic_age_present.loc[:, 'age_category'] = pd.cut(titanic_age_present['age'], bins=age_ranges, labels=age_labels, right=False)
