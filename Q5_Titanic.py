@@ -27,3 +27,8 @@ age_ranges.append(81)
 
 # Use .loc to avoid SettingWithCopyWarning
 titanic_age_present.loc[:, 'age_category'] = pd.cut(titanic_age_present['age'], bins=age_ranges, labels=age_labels, right=False)
+
+# e. For each age category created in d), find out how many passengers are female/male, and how many traveled in each class.
+passengers_by_age_category = titanic_age_present.groupby(['age_category', 'sex', 'pclass']).size().reset_index(name='passenger_count')
+print(passengers_by_age_category)
+
