@@ -30,3 +30,11 @@ plt.ylabel('Fare')
 plt.legend(title='Sex')
 plt.show()
 
+# Question 4: Survival ratio by age, sex, and class
+plt.figure(figsize=(12, 8))
+sns.barplot(data=titanic_data, x='class', y='survived', hue='sex', ci=None)
+plt.title('Survival Ratio by Age, Sex, and Class')
+plt.xlabel('Class')
+plt.ylabel('Survival Ratio')
+plt.legend(title='Sex')
+plt.show()
