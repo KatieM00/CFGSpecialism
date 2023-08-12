@@ -14,3 +14,9 @@ plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle
 plt.title('Proportion of Male/Female Passengers')
 plt.show()
 
+# Question 2: Pie chart for passengers in each class proportion
+class_counts = titanic_data['class'].value_counts()
+plt.figure(figsize=(6, 6))
+plt.pie(class_counts, labels=class_counts.index, autopct='%1.1f%%', startangle=90, colors=['gold', 'lightcoral', 'lightskyblue'])
+plt.title('Proportion of Passengers in Each Class')
+plt.show()
