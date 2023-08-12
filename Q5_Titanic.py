@@ -32,4 +32,3 @@ titanic_age_present.loc[:, 'age_category'] = pd.cut(titanic_age_present['age'], 
 passengers_by_age_category = titanic_age_present.groupby(['age_category', 'sex', 'pclass']).size().reset_index(name='passenger_count')
 print(passengers_by_age_category)
 
-#
