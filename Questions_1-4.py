@@ -20,3 +20,13 @@ plt.figure(figsize=(6, 6))
 plt.pie(class_counts, labels=class_counts.index, autopct='%1.1f%%', startangle=90, colors=['gold', 'lightcoral', 'lightskyblue'])
 plt.title('Proportion of Passengers in Each Class')
 plt.show()
+
+# Question 3: Relationship between age and fare using a scatter plot
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=titanic_data, x='age', y='fare', hue='sex')
+plt.title('Relationship between Age and Fare')
+plt.xlabel('Age')
+plt.ylabel('Fare')
+plt.legend(title='Sex')
+plt.show()
+
