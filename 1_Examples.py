@@ -17,4 +17,3 @@ data_dict = {
 df_from_dict = pd.DataFrame(data_dict)
 
 print(df_from_dict)
-#
